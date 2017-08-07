@@ -1,0 +1,8 @@
+{
+  "rules": {
+    "tweets": {
+      ".read": true,
+      ".write": "auth.uid != null"
+    }
+  }
+}

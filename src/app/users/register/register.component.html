@@ -1,0 +1,39 @@
+<form #f="ngForm" (ngSubmit)="onRegister()">
+
+  <div class="error-message">
+      <p>{{errorMessage}}</p>
+  </div>
+
+  <div class="form-group">
+    <md-input-container class="full-width">
+      <input mdInput type="text" name="firstName" placeholder="First Name" [(ngModel)]="user.firstName" required>
+    </md-input-container>
+  </div>
+
+  <div class="form-group">
+    <md-input-container class="full-width">
+      <input mdInput type="text" name="LastName" placeholder="Last Name" [(ngModel)]="user.lastName" required>
+    </md-input-container>
+  </div>
+
+    <div class="form-group">
+      <md-input-container class="full-width">
+        <input mdInput type="email" name="email" placeholder="Email" [(ngModel)]="user.email" required>
+      </md-input-container>
+    </div>
+    <div class="form-group">
+      <md-input-container class="full-width">
+        <input mdInput type="password" name="password" placeholder="Password" [(ngModel)]="user.password" required>
+      </md-input-container>
+    </div>
+
+    <div class="form-group form-avatar-control">
+      <label>Your profile Picture: </label>
+        <app-avatar (onFileSelect)="onSelectProfilePicture($event)"></app-avatar>
+    </div>
+
+    <div class="form-group">
+      <button md-raised-button type="submit">Register</button>
+    </div>
+
+</form>

@@ -1,0 +1,27 @@
+<md-sidenav-container class="app-primary">
+
+  <md-sidenav #sidenav mode="side" class="app-sidenav">
+    placeholder for content
+  </md-sidenav>
+
+  <md-toolbar color="primary">
+    <button md-button class="app-icon-button" (click)="sidenav.toggle()">
+      <i class="material-icons app-toolbar-menu">menu</i>
+    </button> NG4 Tweet App
+
+    <span class="app-toolbar-filler"></span>
+    <button md-button class="user-action-button login" (click)="login()" *ngIf="!userId">Login</button>
+    <div class="user-profile" *ngIf="userId">
+      <span class="profile-image">
+        <img [src]="profile.photoUrl ? profile.photoUrl : 'https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mm&f=y'" alt="profile image">
+      </span>
+    <button md-button class="user-action-button logout" (click)="logout()" *ngIf="userId">Logout</button>
+    </div>
+
+  </md-toolbar>
+
+  <div class="app-content">
+    <app-tweets></app-tweets>
+  </div>
+
+</md-sidenav-container>
